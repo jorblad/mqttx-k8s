@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mqttx-svc
+  namespace: mqttx
+  labels:
+    app: mqttx
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 192.168.254.22
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: mqttx

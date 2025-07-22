@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mqttx
+  namespace: mqttx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mqttx
+  template:
+    metadata:
+      labels:
+        app: mqttx
+    spec:
+      containers:
+      - name: mqttx-web
+        image: emqx/mqttx-web
+        ports:
+        - containerPort: 80
