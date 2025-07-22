@@ -12,7 +12,7 @@ metadata:
     traefik.ingress.kubernetes.io/preserve-host: "true"
 spec:
   rules:
-  - host: mqttx.k8s.jorblad.se
+  - host: mqttx.k8s.sj-tech.se
     http:
       paths:
       - backend:
@@ -24,5 +24,5 @@ spec:
         pathType: Prefix
   tls:
   - hosts:
-    - mqttx.k8s.jorblad.se
-    secretName: mqttx-k8s-jorblad-se-tls
+    - mqttx.k8s.sj-tech.se
+    secretName: mqttx-k8s-sj-tech-se-tls
